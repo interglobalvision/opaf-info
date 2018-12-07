@@ -46,7 +46,7 @@ function igv_cmb_metaboxes() {
 
     $home_metabox = new_cmb2_box( array(
       'id'            => $prefix . 'home_metabox',
-      'title'         => esc_html__( 'Options', 'cmb2' ),
+      'title'         => esc_html__( 'Fields', 'cmb2' ),
       'object_types'  => array( 'page' ), // Post type
       'show_on'      => array( 'key' => 'id', 'value' => array($home_page->ID) ),
     ) );
@@ -78,6 +78,34 @@ function igv_cmb_metaboxes() {
   	) );
 
   }
+
+  // FAIR
+  $fair_metabox = new_cmb2_box( array(
+    'id'            => $prefix . 'fair_metabox',
+    'title'         => esc_html__( 'Fields', 'cmb2' ),
+    'object_types'  => array( 'fair' ), // Post type
+  ) );
+
+  $fair_metabox->add_field( array(
+    'name' => esc_html__( 'Year', 'cmb2' ),
+    'id'   => $prefix . 'fair_year',
+    'type' => 'text',
+  ) );
+
+  $fair_metabox->add_field( array(
+    'name' => esc_html__( 'Participants', 'cmb2' ),
+    'id'   => $prefix . 'fair_participants',
+    'type' => 'wysiwyg',
+    'options' => array(
+      'wpautop' => false, // use wpautop?
+      'media_buttons' => false, // show insert/upload button(s)
+      'textarea_rows' => 20, // rows="..."
+      'teeny' => true, // output the minimal editor config used in Press This
+      'tinymce' => true, // load TinyMCE, can be used to pass settings directly to TinyMCE using an array()
+    ),
+  ) );
+
+
 
 }
 ?>
