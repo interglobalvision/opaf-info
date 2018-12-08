@@ -28,6 +28,31 @@ get_template_part('partials/seo');
 
 <section id="main-container">
 
-  <header id="header">
-    <h1><a href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a></h1>
+  <header id="header" class="margin-bottom-mid">
+    <h1 class="u-visuallyhidden"><?php bloginfo('name'); ?></h1>
+  <?php
+    $options = get_site_option('_igv_site_options');
+
+    if (!empty($options['opaf_logo'])) {
+  ?>
+    <div id="logo-holder">
+      <?php echo wp_get_attachment_image($options['opaf_logo_id'], 'full'); ?>
+    </div>
+  <?php
+    }
+  ?>
+    <nav class="grid-row font-lucida justify-around padding-bottom-micro padding-top-micro">
+      <div class="grid-item">
+        <a href="#about" data-nav="about">About</a>
+      </div>
+      <div class="grid-item">
+        <a href="#location" data-nav="location">Location</a>
+      </div>
+      <div class="grid-item">
+        <a href="#participants" data-nav="participants">Participants</a>
+      </div>
+      <div class="grid-item">
+        <a href="#press" data-nav="press">Press</a>
+      </div>
+    </nav/>
   </header>
