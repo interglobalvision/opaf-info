@@ -22,7 +22,7 @@ if (have_posts()) {
         if (!empty($options['contact_email']) || !empty($options['socialmedia_instagram']) || !empty($options['socialmedia_twitter']) || !empty($options['socialmedia_facebook'])) {
       ?>
         <section id="contact" class="margin-bottom-basic">
-          <ul>
+          <ul class="font-lucida">
             <?php echo !empty($options['contact_email']) ? '<li><a href="mailto:' . $options['contact_email'] . '">Email</a></li>' : ''; ?>
             <?php echo !empty($options['socialmedia_instagram']) ? '<li><a href="https://instagram.com/' . $options['socialmedia_instagram'] . '">Instagram</a></li>' : ''; ?>
             <?php echo !empty($options['socialmedia_twitter']) ? '<li><a href="https://twitter.com/' . $options['socialmedia_twitter'] . '">Twitter</a></li>' : ''; ?>
