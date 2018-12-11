@@ -62,6 +62,12 @@ function igv_cmb_metaboxes() {
   	) );
 
     $home_metabox->add_field( array(
+      'name' => esc_html__( 'Google map embed', 'cmb2' ),
+      'id'   => $prefix . 'home_map',
+      'type' => 'textarea_code',
+    ) );
+
+    $home_metabox->add_field( array(
   		'name' => esc_html__( 'Press', 'cmb2' ),
   		'id'   => $prefix . 'home_press',
   		'type' => 'wysiwyg',

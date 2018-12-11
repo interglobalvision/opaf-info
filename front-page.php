@@ -14,6 +14,7 @@ if (have_posts()) {
     $location = get_post_meta($post->ID, '_igv_home_location', true);
     $press = get_post_meta($post->ID, '_igv_home_press', true);
     $options = get_site_option('_igv_site_options');
+    $map_embed = get_post_meta($post->ID, '_igv_home_map', true);
 ?>
 
       <article <?php post_class('grid-item item-s-12'); ?> id="post-<?php the_ID(); ?>">
@@ -29,6 +30,15 @@ if (have_posts()) {
         <section id="location" class="margin-bottom-basic padding-top-tiny">
           <h2 class="font-lucida font-size-large margin-bottom-tiny">Location</h2>
           <?php echo apply_filters('the_content', $location); ?>
+          <?php
+            if (!empty($map_embed)) {
+          ?>
+          <div class="margin-top-tiny">
+            <?php echo $map_embed; ?>
+          </div>
+          <?php
+            }
+          ?>
         </section>
       <?php
         }
