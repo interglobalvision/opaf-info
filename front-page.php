@@ -18,21 +18,6 @@ if (have_posts()) {
 
       <article <?php post_class('grid-item item-s-12'); ?> id="post-<?php the_ID(); ?>">
 
-      <?php
-        if (!empty($options['contact_email']) || !empty($options['socialmedia_instagram']) || !empty($options['socialmedia_twitter']) || !empty($options['socialmedia_facebook'])) {
-      ?>
-        <section id="contact" class="margin-bottom-basic">
-          <ul class="font-lucida">
-            <?php echo !empty($options['contact_email']) ? '<li><a href="mailto:' . $options['contact_email'] . '">Email</a></li>' : ''; ?>
-            <?php echo !empty($options['socialmedia_instagram']) ? '<li><a href="https://instagram.com/' . $options['socialmedia_instagram'] . '">Instagram</a></li>' : ''; ?>
-            <?php echo !empty($options['socialmedia_twitter']) ? '<li><a href="https://twitter.com/' . $options['socialmedia_twitter'] . '">Twitter</a></li>' : ''; ?>
-            <?php echo !empty($options['socialmedia_facebook']) ? '<li><a href="' . $options['socialmedia_facebook'] . '">Facebook</a></li>' : ''; ?>
-          </ul>
-        </section>
-      <?php
-        }
-      ?>
-
         <section id="about" class="margin-bottom-basic padding-top-tiny">
           <h2 class="font-lucida font-size-large margin-bottom-tiny">About</h2>
           <?php the_content(); ?>
@@ -82,6 +67,19 @@ if (have_posts()) {
         <section id="press" class="margin-bottom-basic padding-top-tiny">
           <h2 class="font-lucida font-size-large margin-bottom-tiny">Press</h2>
           <?php echo apply_filters('the_content', $press); ?>
+        </section>
+      <?php
+        }
+
+        if (!empty($options['contact_email']) || !empty($options['socialmedia_instagram']) || !empty($options['socialmedia_twitter']) || !empty($options['socialmedia_facebook'])) {
+      ?>
+        <section id="contact" class="margin-bottom-basic">
+          <ul class="font-lucida">
+            <?php echo !empty($options['contact_email']) ? '<li><a href="mailto:' . $options['contact_email'] . '">Email</a></li>' : ''; ?>
+            <?php echo !empty($options['socialmedia_instagram']) ? '<li><a href="https://instagram.com/' . $options['socialmedia_instagram'] . '">Instagram</a></li>' : ''; ?>
+            <?php echo !empty($options['socialmedia_twitter']) ? '<li><a href="https://twitter.com/' . $options['socialmedia_twitter'] . '">Twitter</a></li>' : ''; ?>
+            <?php echo !empty($options['socialmedia_facebook']) ? '<li><a href="' . $options['socialmedia_facebook'] . '">Facebook</a></li>' : ''; ?>
+          </ul>
         </section>
       <?php
         }
