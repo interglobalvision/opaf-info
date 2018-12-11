@@ -33,7 +33,7 @@ if (have_posts()) {
           <?php
             if (!empty($map_embed)) {
           ?>
-          <div class="margin-top-tiny">
+          <div class="margin-top-small" id="map-holder">
             <?php echo $map_embed; ?>
           </div>
           <?php
